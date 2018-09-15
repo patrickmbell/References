@@ -11,6 +11,7 @@ private:
 public:
 	FootballPlayer(string, int, float);
 	string GetName();
+	float stats(); 
 };
 
 FootballPlayer::FootballPlayer(string name, int number, float yards)
@@ -26,12 +27,17 @@ string FootballPlayer::GetName()
 	return name_; 
 }
 
+float FootballPlayer::stats() 
+{
+	return yards_;
+}
+
 int main()
 {
 	FootballPlayer timTebow("Tim Tebow", 15, 1500);
 	FootballPlayer &f = timTebow;
 
-	cout << f.GetName() << endl;
+	cout << f.GetName() << " " << f.stats() << endl;
 	system("pause");
 
 }
